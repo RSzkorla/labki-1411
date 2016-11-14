@@ -22,7 +22,7 @@ namespace labki1411
     public static double NextNewDouble(this Random v, double min, double max) => v.NextDouble() * (max - min) + min;
   }
 
-  static class KlasaStatyczna
+   class KlasaStatyczna
   {
     static int counter =0;
 
@@ -31,7 +31,12 @@ namespace labki1411
       Console.WriteLine("ctor statyczny");
     }
 
+    public KlasaStatyczna()
+    {
+      counter++;
+      Console.WriteLine("ctor instancyjny");
 
+    }
     public static void Display()
     {
       Console.WriteLine(counter);
@@ -57,6 +62,10 @@ namespace labki1411
       //Console.WriteLine("podaj date");
       //var c = Console.ReadLine().GetTime();
       //Console.WriteLine(c);
+
+      KlasaStatyczna a = new KlasaStatyczna();
+      KlasaStatyczna b = new KlasaStatyczna();
+      KlasaStatyczna c = new KlasaStatyczna();
 
       KlasaStatyczna.Display();
       KlasaStatyczna.Incr();
