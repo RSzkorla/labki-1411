@@ -21,6 +21,26 @@ namespace labki1411
 
     public static double NextNewDouble(this Random v, double min, double max) => v.NextDouble() * (max - min) + min;
   }
+
+  static class KlasaStatyczna
+  {
+    static int counter =0;
+
+    static KlasaStatyczna()
+    {
+      Console.WriteLine("ctor statyczny");
+    }
+
+    public static void Display()
+    {
+      Console.WriteLine(counter);
+    }
+    public static void Incr()
+    {
+      counter++;
+    }
+  }
+
   class Program
   {
 
