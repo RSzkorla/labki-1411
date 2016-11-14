@@ -31,6 +31,7 @@ namespace labki1411
       Console.WriteLine("ctor statyczny");
     }
 
+
     public static void Display()
     {
       Console.WriteLine(counter);
@@ -57,6 +58,9 @@ namespace labki1411
       //var c = Console.ReadLine().GetTime();
       //Console.WriteLine(c);
 
+      KlasaStatyczna.Display();
+      KlasaStatyczna.Incr();
+      KlasaStatyczna.Display();
 
 
 
