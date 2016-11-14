@@ -6,10 +6,24 @@ using System.Threading.Tasks;
 
 namespace labki1411
 {
+  static class ExtentionMethods
+  {
+    public static double GetDouble(this string v) => Convert.ToDouble(v);
+    public static int GetInt(this string v) => Convert.ToInt32(v);
+
+  }
   class Program
   {
+
+
     static void Main(string[] args)
     {
+      Console.WriteLine("podaj a");
+      double a = Console.ReadLine().GetDouble();
+      Console.WriteLine($"a= {a}");
+      Console.WriteLine("podaj a");
+      int b = Console.ReadLine().GetInt();
+      Console.WriteLine($"b= {b}");
       // kolos 28.11
       //podstawy
       //wyjątki
@@ -18,6 +32,8 @@ namespace labki1411
       //interfejsy
       //klasy
       //tablice
+
+
     }
   }
 }
