@@ -30,21 +30,16 @@ namespace labki1411
 
     public void SetPassword(string oldPassword, string newPassword)
     {
-      if (oldPassword == _haslo) _haslo = newPassword;
-      else throw new ArgumentException("Wrong Password");
+      if (oldPassword != _haslo) throw new ArgumentException("Wrong Password");
+      _haslo = newPassword;
     }
-
     public void Wplac(decimal a) => _saldo += a;
     public void Wyplac(decimal a)
     {
       if (a < debet) throw new ArgumentException("Below debet");
       _saldo -= a;
     }
-
     public decimal GetSaldo() => _saldo;
-
-
-
 
   }
 
