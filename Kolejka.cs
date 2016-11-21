@@ -7,15 +7,19 @@ using System.Threading.Tasks;
 
 namespace labki1411
 {
-
-  class SNode<T>
+  class QNode<T>
   {
     public T value;
-    public SNode<T> next;
+    public QNode<T> next;
+    public QNode<T> preview;
+
   }
-  class Stos<T> : IStack<T>, IDisplay, IEnumerable<T>
+
+  class Kolejka<T> : IStack<T>, IDisplay, IEnumerable<T>
   {
-    private SNode<T> _current = null;
+
+    private QNode<T> _tail = null;
+    private QNode<T> _head = null;
     public void Display()
     {
       foreach (var item in this)
@@ -26,28 +30,30 @@ namespace labki1411
 
     public IEnumerator<T> GetEnumerator()
     {
-      if (_current != null)
+      if (_head != null)
       do
       {
-        yield return _current.value;
-        _current = _current.next;
-      }while (_current!= null) ;
+        yield return _head.value;
+        _head = _head.next;
+      }while (_head!= null) ;
     }
 
     public T Pop()
     {
-      if (_current == null) return default(T);
-      var returnValiue = _current.value;
-      _current = _current.next;
+      if (_head == null) return default(T);
+      var returnValiue = _head.value;
+      _head = _head.next;
       return returnValiue;
     }
 
     public void Push(T v)
     {
-      var node = new SNode<T>();
+      var node = new QNode<T>();
       node.value = v;
-      node.next = _current;
-      _current = node;
+      node.next = null;
+      _tail.next = node;
+      _tail = node;
+
     }
 
     IEnumerator IEnumerable.GetEnumerator()

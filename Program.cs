@@ -21,6 +21,13 @@ namespace labki1411
       s.Push(3);
       s.Push(4);
       s.Display();
+      Console.WriteLine("---------");
+      Kolejka<int> k = new Kolejka<int>();
+      Console.WriteLine("---------");
+      k.Push(2);
+      k.Push(3);
+      k.Display();
+
       // kolos 28.11
       //podstawy
       //wyjątki
