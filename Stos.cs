@@ -18,15 +18,20 @@ namespace labki1411
     private Node<T> _current = null;
     public void Display()
     {
-      foreach (var item in _current)
+      foreach (var item in this)
       {
-        Console.WriteLine(");
+        Console.WriteLine($"{item.ToString()}");
       }
     }
 
     public IEnumerator<T> GetEnumerator()
     {
-      yield return _current.value;
+      if (_current != null)
+      do
+        {
+        yield return _current.value;
+        _current = _current.next;
+      }while (_current!= null) ;
     }
 
     public T Pop()
