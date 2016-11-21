@@ -26,12 +26,13 @@ namespace labki1411
 
     public IEnumerator<T> GetEnumerator()
     {
-      if (_current != null)
+      SNode<T> head = _current;
+      if (head != null)
       do
       {
-        yield return _current.value;
-        _current = _current.next;
-      }while (_current!= null) ;
+        yield return head.value;
+        head = head.next;
+      }while (head!= null) ;
     }
 
     public T Pop()

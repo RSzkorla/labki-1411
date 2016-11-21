@@ -30,12 +30,13 @@ namespace labki1411
 
     public IEnumerator<T> GetEnumerator()
     {
-      if (_head != null)
+      QNode<T> head = _head;
+      if (head != null)
       do
       {
-        yield return _head.value;
-        _head = _head.next;
-      }while (_head!= null) ;
+        yield return head.value;
+        head = head.next;
+      }while (head!= null) ;
     }
 
     public T Pop()
@@ -51,7 +52,14 @@ namespace labki1411
       var node = new QNode<T>();
       node.value = v;
       node.next = null;
-      _tail.next = node;
+      if (_tail != null)
+      {
+        _tail.next = node;
+          }
+      else
+      {
+        _head = node;
+      }
       _tail = node;
 
     }

@@ -26,6 +26,9 @@ namespace labki1411
       Console.WriteLine("---------");
       k.Push(2);
       k.Push(3);
+      k.Push(4);
+      k.Display();
+      k.Pop();
       k.Display();
 
       // kolos 28.11
