@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace labki1411
 {
-  interface IStack
+  interface IStack<T>
   {
+    void Push(T v);
+    T Pop();
   }
 }

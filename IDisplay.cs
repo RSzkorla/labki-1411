@@ -8,5 +8,6 @@ namespace labki1411
 {
   interface IDisplay
   {
+    void Display();
   }
 }

@@ -8,7 +8,7 @@ using System.Globalization;
 namespace labki1411
 {
 
-
+  
 
   class Program
   {
@@ -16,13 +16,6 @@ namespace labki1411
 
     static void Main(string[] args)
     {
-
-      Konto o = new Konto();
-      Konto.SetDebet(-10);
-      o.Wyplac(100);
-      o.ShowKonto();
-
-
 
       // kolos 28.11
       //podstawy
